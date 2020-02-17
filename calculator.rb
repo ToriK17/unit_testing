@@ -36,13 +36,47 @@ end
 #   puts "test failed"
 # end 
 
-# Tests with RSPEC
+# Tests with RSPEC :: Remember DICE
 
 RSpec.describe Calculator do 
   describe '#add' do 
     it 'should return the sum of two numbers' do
       calculator = Calculator.new
       expect(calculator.add(2,4)).to eq(6)
+    end  
+
+    it 'should return the sum of negative numbers' do 
+      calculator = Calculator.new 
+      expect(calculator.add(-1, -5)).to eq(-6)
     end   
-  end   
+  end 
+
+  describe '#subtract' do 
+    it 'should return the difference of two numbers' do 
+      calculator = Calculator.new 
+      expect(calculator.subtract(9, 4)).to eq(5) 
+    end
+  end 
+
+  describe '#divide' do
+    it 'should return the quotient' do
+      calculator = Calculator.new
+      expect(calculator.divide(10, 2)).to eq(5) 
+    end 
+  end 
+
+  describe '#square' do
+    it 'should return the square of a number' do
+      calculator = Calculator.new
+      expect(calculator.square(10)).to eq(100) 
+    end 
+  end 
+
+  describe '#power' do
+    it 'should return exponentiation' do
+      calculator = Calculator.new
+      expect(calculator.power(2, 5)).to eq(32) 
+    end 
+  end
+
 end   
